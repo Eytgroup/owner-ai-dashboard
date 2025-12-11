@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { supabaseAdmin } from '@/lib/supabaseClient'; 
 
-// احصل على المفتاح السري للـ Webhook من متغيرات البيئة
-const webhookSecret = process.env.WOOCOMMERCE_WEBHOOK_SECRET;
+// ** الحل النهائي لـ 401: استخدام المفتاح السري مباشرةً لتجنب مشاكل Vercel ENV **
+const webhookSecret = 'N3wWcS3cr3T89';
 
 // ----------------------------------------------------------------
 // [الكود المعدل لحل مشكلة 401 في Vercel - يستخدم Base64]
@@ -97,3 +97,4 @@ export async function POST(request) {
     return NextResponse.json({ message: 'Internal Server Error during processing' }, { status: 500 });
   }
 }
+
