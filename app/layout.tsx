@@ -1,16 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// تم حذف: import { Geist, Geist_Mono } from "next/font/google"; 
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// تم حذف تعريفات الخطوط
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,10 +15,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    // تم تغيير لغة الصفحة واتجاهها إلى العربية
+    <html lang="ar" dir="rtl">
+      {/* تم حذف متغيرات الخطوط من الكلاس */}
+      <body className={`antialiased bg-gray-100`}> 
         {children}
       </body>
     </html>
